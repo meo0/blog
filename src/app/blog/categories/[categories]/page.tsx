@@ -1,0 +1,27 @@
+import Link from "next/link";
+import { getAllCategories, getAllPosts } from "@/lib/posts";
+
+export function generateStaticParams() {
+  return getAllCategories().map((category) => ({ category }));
+}
+
+export default function CategoryPage({ params }: { params: { category: string } }) {
+  const category = params.category;
+  const posts = getAllPosts().filter((p) => p.category === category);
+
+  return (
+    <main>
+      <h1>Category: {category}</h1>
+      <ul>
+        {posts.map((p) => (
+          <li key={p.slug}>
+            <Link href={`/blog/${encodeURIComponent(p.slug)}`}>{p.title}</Link>
+          </li>
+        ))}
+      </ul>
+      <p>
+        <Link href="/blog">Back</Link>
+      </p>
+    </main>
+  );
+}

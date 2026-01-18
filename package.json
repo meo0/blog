@@ -1,0 +1,21 @@
+{
+  "name": "blog",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "pagefind": "npx pagefind --site out"
+  },
+  "dependencies": {
+    "@giscus/react": "^3.0.0",
+    "gray-matter": "^4.0.3",
+    "next": "^14.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.0",
+    "remark-html": "^16.0.1"
+  }
+}
