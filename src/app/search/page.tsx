@@ -18,7 +18,7 @@ export default function SearchPage() {
       if (!q.trim()) return;
 
       // @ts-ignore
-      const pagefind: PagefindModule = await import(/* webpackIgnore: true */ "/pagefind/pagefind.js");
+      const pagefind: PagefindModule = await import("/pagefind/pagefind.js");
       const res = await pagefind.search(q);
       const data = await Promise.all(res.results.slice(0, 20).map((r) => r.data()));
 

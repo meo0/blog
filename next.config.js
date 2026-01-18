@@ -2,7 +2,13 @@
 const nextConfig = {
   output: "export",
   images: {
-    unoptimized: true, // GitHub Pagesでは最初これが安全
+    unoptimized: true,
+  },
+  webpack: (config) => {
+    config.externals.push({
+      "/pagefind/pagefind.js": "commonjs /pagefind/pagefind.js",
+    });
+    return config;
   },
 };
 
