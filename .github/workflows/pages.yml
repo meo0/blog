@@ -34,9 +34,9 @@ jobs:
           mkdir -p content/posts
           rsync -av --delete "_memo/Publish/posts/" "content/posts/"
 
-          rm -rf public/assets
-          mkdir -p public/assets
-          rsync -av --delete "_memo/Publish/assets/" "public/assets/"
+          rm -rf public/Publish/assets
+          mkdir -p public/Publish/assets
+          rsync -av --delete "_memo/Publish/assets/" "public/Publish/assets/"
 
       - name: Setup Node
         uses: actions/setup-node@v4
