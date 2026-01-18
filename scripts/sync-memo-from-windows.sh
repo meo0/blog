@@ -2,6 +2,7 @@
 set -euo pipefail
 
 # Windows側のObsidian Vault（WSLから見えるパス）
+# meo0のObsidian Vaultが置かれているローカルの場所。
 WIN_VAULT="/mnt/c/Users/hashi/Documents/obsidian"
 POSTS_SRC="${WIN_VAULT}/Publish/posts"
 ASSETS_SRC="${WIN_VAULT}/Publish/assets"
