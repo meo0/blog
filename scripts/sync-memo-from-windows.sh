@@ -13,8 +13,8 @@ rm -rf content/posts
 mkdir -p content/posts
 rsync -av --delete "${POSTS_SRC}/" "content/posts/"
 
-rm -rf public/assets
-mkdir -p public/assets
-rsync -av --delete "${ASSETS_SRC}/" "public/assets/"
+rm -rf public/Publish/assets
+mkdir -p public/Publish/assets
+rsync -av --delete "${ASSETS_SRC}/" "public/Publish/assets/"
 
 echo "Synced Windows Publish -> blog content/public"
