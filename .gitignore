@@ -31,3 +31,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local debag
+/public/Publish/assets
+/content/posts
+public/pagefind

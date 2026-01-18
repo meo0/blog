@@ -6,12 +6,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "pagefind": "npx pagefind --site out"
+    "pagefind": "npx pagefind --site out",
+    "dev:win": "bash scripts/sync-memo-from-windows.sh && next dev",
+    "preview:win": "bash scripts/sync-memo-from-windows.sh && next build && npx pagefind --site out && npx serve out -l 3000"
   },
   "dependencies": {
     "@giscus/react": "^3.0.0",
     "gray-matter": "^4.0.3",
+    "lucide-react": "^0.562.0",
     "next": "^14.2.0",
+    "next-themes": "^0.4.6",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "rehype-raw": "^7.0.0",
@@ -22,9 +26,13 @@
     "remark-rehype": "^11.1.2"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^25.0.9",
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.1",
     "typescript": "^5.9.3"
   }
 }
