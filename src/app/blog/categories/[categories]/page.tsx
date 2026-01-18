@@ -2,11 +2,11 @@ import Link from "next/link";
 import { getAllCategories, getAllPosts } from "@/lib/posts";
 
 export function generateStaticParams() {
-  return getAllCategories().map((category) => ({ category }));
+  return getAllCategories().map((cat) => ({ categories: cat }));
 }
 
-export default function CategoryPage({ params }: { params: { category: string } }) {
-  const category = params.category;
+export default function CategoryPage({ params }: { params: { categories: string } }) {
+  const category = decodeURIComponent(params.categories);
   const posts = getAllPosts().filter((p) => p.category === category);
 
   return (
