@@ -6,7 +6,7 @@ export function generateStaticParams() {
 }
 
 export default function TagPage({ params }: { params: { tag: string } }) {
-  const tag = params.tag;
+  const tag = decodeURIComponent(params.tag);
   const posts = getAllPosts().filter((p) => p.tags.includes(tag));
 
   return (

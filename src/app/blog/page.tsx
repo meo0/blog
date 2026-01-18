@@ -12,7 +12,7 @@ export default function BlogIndexPage() {
 
       <section>
         <h2>Search</h2>
-        <Link href="/blog/search">/blog/search</Link>
+        <Link href="/search">/search</Link>
       </section>
 
       <section>
@@ -20,7 +20,7 @@ export default function BlogIndexPage() {
         <ul>
           {tags.map((t) => (
             <li key={t}>
-              <Link href={`/blog/tags/${encodeURIComponent(t)}`}>{t}</Link>
+              <Link href={`/blog/tag/${encodeURIComponent(t)}`}>{t}</Link>
             </li>
           ))}
         </ul>
