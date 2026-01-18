@@ -7,7 +7,8 @@ export function generateStaticParams() {
 }
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+  const slug = decodeURIComponent(params.slug);
+  const post = getPostBySlug(slug);
   if (!post) return <main>Not found</main>;
 
   const html = await renderMarkdownToHtml(post.content);
