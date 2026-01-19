@@ -20,7 +20,7 @@ export default function TagPage({ params }: { params: { tag: string } }) {
         ))}
       </ul>
       <p>
-        <Link href="/blog">Back</Link>
+        <Link href="/">Back</Link>
       </p>
     </main>
   );

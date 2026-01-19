@@ -20,7 +20,7 @@ export default function CategoryPage({ params }: { params: { categories: string 
         ))}
       </ul>
       <p>
-        <Link href="/blog">Back</Link>
+        <Link href="/">Back</Link>
       </p>
     </main>
   );
