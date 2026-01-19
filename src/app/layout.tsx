@@ -1,5 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { Navbar } from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: {
@@ -15,28 +17,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja">
-      <body className="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen flex flex-col">
-        <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-          <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-            <a href="/" className="font-bold text-xl tracking-tight">
-              blog.meo0
-            </a>
-            <nav>
-                <a href="/search" className="text-sm font-medium hover:text-blue-600 transition-colors">
-                    Search
-                </a>
-            </nav>
-          </div>
-        </header>
-        <div className="flex-grow container mx-auto px-4 py-8 max-w-5xl">
-            {children}
-        </div>
-        <footer className="border-t bg-white">
-            <div className="container mx-auto px-4 py-6 text-center text-sm text-gray-500">
-                &copy; {new Date().getFullYear()} meo0 blog. All rights reserved.
+    <html lang="ja" suppressHydrationWarning>
+      <body className="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen flex flex-col dark:bg-gray-950 dark:text-gray-50 transition-colors duration-300">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Navbar />
+            <div className="flex-grow container mx-auto px-4 py-8 max-w-5xl">
+                {children}
             </div>
-        </footer>
+            <footer className="border-t bg-white dark:bg-gray-950 border-gray-200 dark:border-gray-800 transition-colors duration-300">
+                <div className="container mx-auto px-4 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
+                    &copy; {new Date().getFullYear()} meo0 blog. All rights reserved.
+                </div>
+            </footer>
+        </ThemeProvider>
       </body>
     </html>
   );

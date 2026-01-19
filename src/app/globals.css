@@ -2,21 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
     :root {
-        --foreground-rgb: 255, 255, 255;
-        --background-start-rgb: 0, 0, 0;
-        --background-end-rgb: 0, 0, 0;
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+        /* ... other variables can be added as needed, keeping it simple for now matching tailwind defaults approximately */
+    }
+
+    .dark {
+        --background: 222.2 84% 4.9%;
+        --foreground: 210 40% 98%;
     }
 }
 
 body {
-    color: rgb(var(--foreground-rgb));
-    @apply bg-gray-50;
+    @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-50 transition-colors duration-300;
 }
