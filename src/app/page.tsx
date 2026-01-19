@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getAllPosts, getAllTags, getAllCategories } from "@/lib/posts";
+import PostCard from "@/components/PostCard";
 
 export default function BlogIndexPage() {
   const posts = getAllPosts();
@@ -17,27 +18,7 @@ export default function BlogIndexPage() {
         <h2 className="text-2xl font-bold tracking-tight mb-6">Latest Posts</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((p) => (
-            <Link
-              key={p.slug}
-              href={`/blog/${encodeURIComponent(p.slug)}`}
-              className="group block p-6 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-500 transition-all duration-200"
-            >
-              <article className="space-y-2">
-                <h3 className="text-xl font-semibold group-hover:text-blue-600 transition-colors">
-                  {p.title}
-                </h3>
-                {p.date && (
-                  <p className="text-sm text-gray-500">
-                    {p.date}
-                  </p>
-                )}
-                {p.description && (
-                   <p className="text-gray-600 line-clamp-3 text-sm">
-                       {p.description}
-                   </p>
-                )}
-              </article>
-            </Link>
+            <PostCard key={p.slug} post={p} />
           ))}
         </div>
       </section>
@@ -65,9 +46,9 @@ export default function BlogIndexPage() {
               <li key={c}>
                 <Link
                   href={`/blog/categories/${encodeURIComponent(c)}`}
-                  className="text-gray-600 hover:text-blue-600 transition-colors flex items-center"
+                  className="text-gray-700 font-medium hover:text-blue-600 hover:bg-white transition-all flex items-center p-2 rounded-md hover:shadow-sm"
                 >
-                  <span className="w-2 h-2 bg-gray-300 rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
                   {c}
                 </Link>
               </li>
