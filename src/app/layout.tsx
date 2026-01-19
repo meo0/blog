@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ja">
       <body style={{ maxWidth: 800, margin: "0 auto", padding: 16 }}>
         <header style={{ marginBottom: 24 }}>
-          <a href="/blog">Blog</a>
+          <a href="/">Blog</a>
         </header>
         {children}
       </body>
